@@ -12,7 +12,6 @@ export class RouteController
         return this.routesService.create(createRouteDto);
     }
     
-
     @Get()
     findAll(){
         return this.routesService.findAll();
