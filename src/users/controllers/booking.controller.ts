@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from "@nestjs/common";
-import { CreateBookingDto } from "src/dto/booking.dto";
-import { BookingsService } from "src/services/bookings.service";
+import { CreateBookingDto } from "../dto/booking.dto";
+import { BookingsService } from "../services/bookings.service";
 
 
 @Controller('booking')

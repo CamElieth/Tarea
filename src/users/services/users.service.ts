@@ -4,7 +4,7 @@ import { DataSource, Repository } from 'typeorm';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/user.dto';
 import { UserImage } from '../entities/userImage.entity';
-import { LoginUserDto } from '../dto/userLogin.entity';
+import { UserLoginDto } from '../dto/userLogin.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -33,7 +33,7 @@ export class UsersService {
     return user;
   }
 
-  async login(login: LoginUserDto) {
+  async login(login: UserLoginDto) { 
     const { password, email } = login;
     const user = await this.userRepo.findOne({
       where: { email },

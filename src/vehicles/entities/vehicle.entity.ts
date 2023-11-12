@@ -1,4 +1,4 @@
-import { Driver } from 'src/users/driver.entity';
+import { Driver } from 'src/users/entities/driver.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 
 
