@@ -10,7 +10,7 @@ export class Stop {
   @Column({ type: 'varchar', length: 100, nullable: false })
   name: string;
 
-  @Column('point')
+  @Column({type: 'varchar', length: 100, nullable: false})
   coordinates: string;
 
   @Column({ type: 'varchar', length: 100, nullable: false })

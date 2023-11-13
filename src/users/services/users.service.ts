@@ -34,24 +34,17 @@ export class UsersService {
   }
 
   async login(login: UserLoginDto) { 
-    const { password, email } = login;
+    const {name,password } = login;
     const user = await this.userRepo.findOne({
-      where: { email },
-      select: { password: true, email: true },
+      where: { name },
+      select: { password: true, name: true },
     });
 
-    if (!user) {
+    if (!user||!bcrypt.compareSync(password, user.password)) {
       throw new UnauthorizedException(
-        'Usuario no encontrado con este email',
+        'Acceso Denegado ',
       );
     }
-
-    if (!bcrypt.compareSync(password, user.password)) {
-      throw new UnauthorizedException(
-        'Contraseña incorrecta',
-      );
-    }
-
     return user;
   }
 
